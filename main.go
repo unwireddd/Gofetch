@@ -4,6 +4,8 @@ import (
 	"bufio"
 	"fmt"
 	"os"
+	"os/exec"
+	"strings"
 	"time"
 
 	"github.com/fatih/color"
@@ -73,6 +75,14 @@ func main() {
 	percentused := virmem.UsedPercent
 	totalswap := swap.Total
 
+	// Obtaining the init system info
+	getInit := exec.Command("ps", "-p", "1", "-o", "comm=")
+	init, _ := getInit.Output()
+	//fmt.Println(init)
+	initUn := string(init)
+	initOut := strings.TrimSpace(initUn)
+	//fmt.Println(initOut)
+
 	// Printing out the basic info
 	var distro string
 	kolor := color.New(color.BgBlack)
@@ -136,6 +146,9 @@ func main() {
 	kolor.Print("Kernel: ")
 	fmt.Println(kernel, kernelArch)
 
+	kolor.Print("Init: ")
+	fmt.Println(initOut)
+
 	kolor.Print("RAM: ")
 	fmt.Print(conv(usedmem), "M", " / ", conv(totalmem), "M", " (", int(percentused), "%", ")")
 	fmt.Println()
@@ -172,3 +185,4 @@ func main() {
 	kolor.Println("")
 
 }
+
