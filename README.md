@@ -8,7 +8,7 @@ A simple and pretty command-line system information tool written in Go.
 -A Linux-based Operating System
 
 # Sample screenshot
-![Arch Linux](sample-github.png)
+![Arch Linux](sample3.png)
 
 # Known issues
 
