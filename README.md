@@ -9,8 +9,11 @@ A simple and pretty command-line system information tool written in Go.
 
 # Installation
 git clone https://github.com/unwireddd/Gofetch
+
 cd Gofetch
+
 sudo chmod +x install.sh
+
 ./install.sh
 
 # Sample screenshot
