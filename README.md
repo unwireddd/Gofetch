@@ -7,6 +7,12 @@ A simple and pretty command-line system information tool written in Go.
 
 -A Linux-based Operating System
 
+# Installation
+git clone https://github.com/unwireddd/Gofetch
+cd Gofetch
+sudo chmod +x install.sh
+./install.sh
+
 # Sample screenshot
 ![Arch Linux](sample3.png)
 
