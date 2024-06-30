@@ -88,43 +88,43 @@ func main() {
 	kolor := color.New(color.BgBlack)
 	switch {
 	case osversion == "arch":
-		distro = "Ascii/ascii"
+		distro = "/etc/Gofetch/Ascii/ascii"
 		blue := color.New(color.FgHiBlue)
 		kolor = blue.Add(color.Bold)
 	case osversion == "artix":
-		distro = "Ascii/artix"
+		distro = "/etc/Gofetch/Ascii/artix"
 		blue := color.New(color.FgHiBlue)
 		kolor = blue.Add(color.Bold)
 	case osversion == "debian":
-		distro = "Ascii/debian"
+		distro = "/etc/Gofetch/Ascii/debian"
 		red := color.New(color.FgHiRed)
 		kolor = red.Add(color.Bold)
 	case osversion == "fedora":
-		distro = "Ascii/fedora"
+		distro = "/etc/Gofetch/Ascii/fedora"
 		blue := color.New(color.FgHiBlue)
 		kolor = blue.Add(color.Bold)
 	case osversion == "gentoo":
-		distro = "Ascii/gentoo"
+		distro = "/etc/Gofetch/Ascii/gentoo"
 		purple := color.New(color.FgHiMagenta)
 		kolor = purple.Add(color.Bold)
 	case osversion == "popos":
-		distro = "Ascii/popos"
+		distro = "/etc/Gofetch/Ascii/popos"
 		grey := color.New(color.FgHiWhite)
 		kolor = grey.Add(color.Bold)
 	case osversion == "slackware":
-		distro = "Ascii/slackware"
+		distro = "/etc/Gofetch/Ascii/slackware"
 		blue := color.New(color.FgHiBlue)
 		kolor = blue.Add(color.Bold)
 	case osversion == "ubuntu":
-		distro = "Ascii/ubuntu"
+		distro = "/etc/Gofetch/Ascii/ubuntu"
 		yellow := color.New(color.FgHiYellow)
 		kolor = yellow.Add(color.Bold)
 	case osversion == "void":
-		distro = "Ascii/void"
+		distro = "/etc/Gofetch/Ascii/void"
 		green := color.New(color.FgHiGreen)
 		kolor = green.Add(color.Bold)
 	default:
-		distro = "Ascii/linux"
+		distro = "/etc/Gofetch/Ascii/linux"
 		grey := color.New(color.FgHiWhite)
 		kolor = grey.Add(color.Bold)
 
