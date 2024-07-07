@@ -1,28 +1,28 @@
 # Gofetch
-A simple and pretty command-line system information tool written in Go.
 
-# Requirements
+![Arch Linux](sample3.png)  ![Fedora Linux](sample-github2.png)
 
--Go 1.22.4 or newer
+A simple and elegant command-line system information tool written in Go.
 
--A Linux-based Operating System
+## Requirements:
 
-# Installation
-git clone https://github.com/unwireddd/Gofetch
+    A Linux-based Operating System
+    Go 1.22.4 or newer
+    git
+    bash
 
-cd Gofetch
+## Installation
 
-sudo chmod +x install.sh
+    git clone https://github.com/unwireddd/Gofetch
+    cd Gofetch
+    sudo chmod +x install.sh
+    ./install.sh
 
-./install.sh
+## Known Issues
 
-# Sample screenshot
-![Arch Linux](sample3.png)
+There is a potential error related to the index of the graphInfo table, which depends on your hardware. Generally, it should work without issues. If you encounter this error, simply change the array index to 1.
 
-# Known issues
 
-error at the index of graphInfo table - from what I know it depends of your hardware. it should mostly work without any issues but if it happens somehow, all you have to do it to change the array index to 1
+## Credits
 
-# Credits
-
-Every ascii art is taken from https://github.com/ad-oliviero/uwufetch
+All ASCII art is sourced from [uwufetch](https://github.com/ad-oliviero/uwufetch.)
