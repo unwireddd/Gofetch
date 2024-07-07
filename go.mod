@@ -1,4 +1,4 @@
-module mymod
+module gofetch
 
 go 1.22.3
 
