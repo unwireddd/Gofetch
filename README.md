@@ -20,7 +20,7 @@ A simple and elegant command-line system information tool written in Go.
 
 ## Known Issues
 
-There is a potential error related to the index of the graphInfo table, which depends on your hardware. Generally, it should work without issues. If you encounter this error, simply change the array index to 1.
+[SOLVED] There is a potential error related to the index of the graphInfo table, which depends on your hardware. Generally, it should work without issues. If you encounter this error, simply change the array index to 1.
 
 
 ## Credits
