@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"os"
 	"os/exec"
+	"reflect"
 	"strings"
 	"time"
 
@@ -34,7 +35,7 @@ func main() {
 
 	// Obtaining the CPU info
 	cpu, _ := cpu.Info()
-	cpuModel := cpu[0].ModelName
+	cpuModel := cpu[1].ModelName
 	//fmt.Println(cpuModel)
 
 	// Obtaining the hostname info
@@ -52,8 +53,17 @@ func main() {
 	// Obtaining the GPU info
 	graphs, _ := ghw.GPU(ghw.WithDisableWarnings())
 	graphInfo := graphs.GraphicsCards
-	gpuout := graphInfo[1]
+	firstElem := graphInfo[0]
+	gpuout := graphInfo[0]
+	elemType := reflect.TypeOf(firstElem)
+	if elemType.Kind() == reflect.Struct {
+		gpuout = graphInfo[0]
+	} else {
+		gpuout = graphInfo[1]
+	}
+
 	graphFinal := gpuout.DeviceInfo.Product.Name
+	//fmt.Println(graphInfo[1])
 
 	// Obtaining the BIOS info
 	bios, _ := ghw.BIOS()
@@ -63,6 +73,10 @@ func main() {
 	drive, _ := ghw.Block()
 	test2 := drive.Disks[0]
 	driveFinal := test2.Model
+
+	if driveFinal == "unknown" {
+		driveFinal = "unknown / encrypted"
+	}
 
 	// Obtaining the timezone info
 	timezone, _ := time.Now().Local().Zone()
@@ -82,6 +96,14 @@ func main() {
 	initUn := string(init)
 	initOut := strings.TrimSpace(initUn)
 	//fmt.Println(initOut)
+
+	// Obtaining the install date info
+
+	getDate := exec.Command("sh", "-c", "ls -alct /|tail -1|awk '{print $6, $7}'")
+	iDate, _ := getDate.Output()
+	dateUn := string(iDate)
+	dateOut := strings.TrimSpace(dateUn)
+	//fmt.Println(dateOut)
 
 	// Printing out the basic info
 	var distro string
@@ -143,6 +165,9 @@ func main() {
 	kolor.Print("Operating System: ")
 	fmt.Println(osversion, operating)
 
+	kolor.Print("Installation date: ")
+	fmt.Println(dateOut)
+
 	kolor.Print("Kernel: ")
 	fmt.Println(kernel, kernelArch)
 
@@ -185,4 +210,3 @@ func main() {
 	kolor.Println("")
 
 }
-
